@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <meta http-equiv="refresh" content="1">  刷新网页起到更新时间的目的，我觉得不好...-->
+	<title>Time</title>
+
+</head>
+<body>
+
+<div id= "time"></div>
+
+<!-- <script src="https://code.jquery.com/jquery-3.1.0.js"></script> -->
+<script type="text/javascript" >
+	function retime(argument) {
+		var now = new Date();
+		var year = now.getFullYear();
+		var month = now.getMonth() + 1;
+		var day = now.getDate();
+		var hour = now.getHours();
+		var mintue = now.getMinutes();
+		var second = now.getSeconds();
+		var nowTime = year + "年" + month + "月" + day + "日" + hour + "时" + mintue + "分" + second + "秒";
+		document.getElementById("time").innerHTML = nowTime;
+
+	}
+	setInterval("retime()",1000);
+	//每一秒调用该函数，稍微好一点
+
+</script>
+
+</body>
+</html>
