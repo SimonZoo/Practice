@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scroll</title>
+	<style type="text/css">
+		#parent {
+			position: relative;
+			margin: 600px auto;
+			height: 20px;
+			width: 800px;
+			border-radius: 20px;
+			background-color: #CCC;
+		}
+		#kid {
+			position: absolute;
+			background-color: yellow;
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+		}
+		#box {
+			width: 30px;
+			height: 30px;
+			margin-top: -400px;
+			background-color: green;
+			position: absolute;
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+<div id="box"></div>
+<div id= "parent">
+	<div id="kid">
+	</div>
+</div>
+<script src="scroll.js"></script>
+
+</body>
+</html>
