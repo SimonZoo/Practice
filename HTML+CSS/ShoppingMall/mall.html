@@ -42,7 +42,7 @@
 
 <div class="container">
 	<div class="img-logo"> 
-		<img src="mall.png" alt="mall">
+		<img src="picture/mall.png" alt="mall">
 	</div>
 	<ul class="product">
 		<li class="nav-li">
@@ -75,14 +75,30 @@
 			</form>
 		</li>
 	</ul>
-	
 </div>
 
-<div class="pro-picture">
+<div class="pro-picture" id="pro-picture">
 	<div class="name-box">
 		<ul>
 			<li>
 				<a href="#" class="pro-link">产品分类0</a>
+				<ul class="name-detail">
+					<li>
+						<a href="#" class="pro-link">详细分类1</a>
+					</li>
+					<li>
+						<a href="#" class="pro-link">详细分类2</a>
+					</li>
+					<li>
+						<a href="#" class="pro-link">详细分类3</a>
+					</li>
+					<li>
+						<a href="#" class="pro-link">详细分类4</a>
+					</li>
+					<li>
+						<a href="#" class="pro-link">详细分类5</a>
+					</li>
+				</ul>
 			</li>
 			<li>
 				<a href="#" class="pro-link">产品分类1</a>
@@ -107,10 +123,135 @@
 			</li>
 		</ul>
 	</div>
+	
+	<div class="picture-box" id="picture-box">
+		<img src="picture/pg-1.jpg" id="P-1">
+		<img src="picture/pg-2.jpg" id="P-2">
+		<img src="picture/pg-3.jpg" id="P-3">
+		<img src="picture/pg-4.jpg" id="P-4">
+		<img src="picture/pg-5.jpg" id="P-5">
+	</div>picture/
+	<span class="left-arrow" id="left-arrow">&lt;</span>
+	<span class="right-arrow" id="right-arrow">&gt;</span>
+</div>
+
+<div id="part">
+	<div class="part-1"> 
+		<ul>
+			<li>
+				<img src="picture/ico-1.png"> 
+				<a href="#" class="nav-link">小功能1</a>
+			</li>
+			<li>
+				<img src="picture/ico-2.png"> 
+				<a href="#" class="nav-link">小功能2</a>
+			</li>
+		</ul>
+
+		<ul>
+			<li>
+				<img src="picture/ico-3.png"> 
+				<a href="#" class="nav-link">小功能3</a>
+			</li>
+			<li>
+				<img src="picture/ico-1.png"> 
+				<a href="#" class="nav-link">小功能4</a>
+			</li>
+		</ul>
+
+		<ul>
+			<li>
+				<img src="picture/ico-3.png"> 
+				<a href="#" class="nav-link">小功能5</a>
+			</li>
+			<li>
+				<img src="picture/ico-1.png"> 
+				<a href="#" class="nav-link">小功能6</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="part-2">
+		<ul>
+			<li>
+				<a href="#" class="nav-link"><img src="picture/cat1.jpg"> </a>
+			</li>
+			<li>
+				<a href="#" class="nav-link"><img src="picture/cat2.jpg"> </a>
+			</li>
+			<li>
+				<a href="#" class="nav-link"><img src="picture/cat3.jpg"> </a>
+			</li>
+		</ul>
+		
+	</div>
+</div>
+ 
+<div id="super-product">
+	<h2>明星产品<div class="more"></div></h2>
+	<ul>
+		<li class="rainbow-1">
+			<a href="#" class="nav-link"><img src=""> 
+			<p>产品A</p>
+			<p>价格</p>
+			<p>产品介绍</p>
+			</a>
+		</li>
+		<li class="rainbow-2">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
+		<li class="rainbow-3">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
+		<li class="rainbow-4">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
+		<li class="rainbow-5">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
+	</ul>
+	
 </div>
 
 
 
+<script type="text/javascript">
+	window.onload = function () {
+		var prev = document.getElementById('left-arrow');
+		var next = document.getElementById('right-arrow');
+		var pictures = document.getElementById('picture-box');
+		function animate(offset) {
+			var newLeft = pictures.offsetLeft + offset;
+			pictures.style.left = newLeft + 'px';
+			if (newLeft < -5120) {
+				pictures.style.left= 0 + 'px';
+			}
+			if (newLeft > 0) {
+				pictures.style.left = -5120 + 'px';
+			}
+		}
+		prev.onclick = function(){
+			animate(1280);
+		}
+		next.onclick = function(){
+			animate(-1280);
+		}
 
+		var timer;
+		function play() {
+			timer = setInterval(function(){
+				prev.onclick()
+			}, 3000);
+		}
+		function stop() {
+			clearInterval(timer);
+		}
+		play();
+
+		pictures.onmouseover = stop;
+		pictures.onmouseout = play;
+
+	};
+</script>
 </body>
 </html>
