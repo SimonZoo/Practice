@@ -256,11 +256,12 @@ a.pro-link {
 
 .part-2 {
 	position: absolute;
+	height: 320px;
+	margin-left: 200px;
 }
 
 .part-2 ul {
 	margin-top: 0;
-	margin-left: 200px;
 	padding: 0;
 }
 
@@ -285,12 +286,18 @@ a.pro-link {
 	margin: 50px 80px;
 	position: relative;
 	height: 500px;
-	width: 1310px;
+	width: 1305px;	
+	overflow: hidden;
 }
 
 #super-product ul {
+	position: absolute;
+	left: 0;
 	padding: 0;
 	margin: 0;
+	width: 2610px;
+	height: 500px;
+	top: 50px;
 }
 
 #super-product h2 {
@@ -307,7 +314,7 @@ a.pro-link {
 	display: block;
 	height: 400px;
 	width: 230px;
-	margin-right: 30px;
+	margin-right: 31px;
 	background-color: rgb(245,245,245);
 }
 
@@ -315,10 +322,39 @@ a.pro-link {
 	color: #333;
 	text-align: center;
 }
-
-.more {
-	border: 1px solid red;
+.title {
+	position: absolute;
 }
+.title h2 {
+	margin-top: 0;
+}
+.more {
+	position: absolute;
+	left: 1200px;
+	width: 80px;
+
+}
+
+
+.more-span {
+	display: block;
+	height: 26px;
+	width: 36px;
+	border: 2px solid rgb(240,240,240);
+	float: left;
+	padding-top: 3px;
+	color: gray;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin-left: -2px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.more span:hover {
+	color: orange;
+}
+
 
 .rainbow-1 {
 	border-top: 1px solid red;

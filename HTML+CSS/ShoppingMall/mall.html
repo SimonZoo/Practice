@@ -130,7 +130,7 @@
 		<img src="picture/pg-3.jpg" id="P-3">
 		<img src="picture/pg-4.jpg" id="P-4">
 		<img src="picture/pg-5.jpg" id="P-5">
-	</div>picture/
+	</div>
 	<span class="left-arrow" id="left-arrow">&lt;</span>
 	<span class="right-arrow" id="right-arrow">&gt;</span>
 </div>
@@ -188,8 +188,15 @@
 </div>
  
 <div id="super-product">
-	<h2>明星产品<div class="more"></div></h2>
-	<ul>
+	<div class="title">
+		<h2>明星产品</h2>
+	</div>	
+	<div class="more">
+		<span href="#" id="more-l" class="more-span">&lt;</span>
+		<span href="#" id="more-r" class="more-span">&gt;</span>
+	
+	</div>
+	<ul id="super-ul">
 		<li class="rainbow-1">
 			<a href="#" class="nav-link"><img src=""> 
 			<p>产品A</p>
@@ -209,8 +216,27 @@
 		<li class="rainbow-5">
 			<a href="#" class="nav-link"><img src=""> </a>
 		</li>
+
+		<li class="rainbow-1">
+			<a href="#" class="nav-link"><img src=""> 
+			<p>产品B</p>
+			<p>价格</p>
+			<p>产品介绍</p>
+			</a>
+		</li>
+		<li class="rainbow-2">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
+		<li class="rainbow-3">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
+		<li class="rainbow-4">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
+		<li class="rainbow-5">
+			<a href="#" class="nav-link"><img src=""> </a>
+		</li>
 	</ul>
-	
 </div>
 
 
@@ -224,7 +250,7 @@
 			var newLeft = pictures.offsetLeft + offset;
 			pictures.style.left = newLeft + 'px';
 			if (newLeft < -5120) {
-				pictures.style.left= 0 + 'px';
+				pictures.style.left = 0 + 'px';
 			}
 			if (newLeft > 0) {
 				pictures.style.left = -5120 + 'px';
@@ -251,6 +277,29 @@
 		pictures.onmouseover = stop;
 		pictures.onmouseout = play;
 
+
+		var moreL = document.getElementById('more-l');
+		var moreR = document.getElementById('more-r');
+		var superP = document.getElementById('super-ul');
+		var moreTimer = null;
+		function more(offset) {
+			clearInterval(moreTimer);
+			moreTimer = setInterval(function() 
+			{
+				if ((superP.offsetLeft == 0 && offset > 0) || (superP.offsetLeft == -1300 && offset < 0)) {
+					clearInterval(moreTimer);
+				}else {
+					superP.style.left = superP.offsetLeft + offset + 'px';
+				}
+			}, 30);	
+		}
+
+		moreL.onclick = function() {
+			more(100);
+		}
+		moreR.onclick = function() {
+			more(-100);
+		} 
 	};
 </script>
 </body>
