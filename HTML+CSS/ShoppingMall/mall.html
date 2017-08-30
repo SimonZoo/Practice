@@ -526,6 +526,115 @@
 		</div>
 	</div>
 
+	<div id="hot-comment-pro">
+		<div class="title">
+			<h2>热评产品</h2>
+		</div>
+		<ul>
+			<li>
+				<a href="#">
+					<img src="#">
+					<p class="hot-comment">来自用户的评价 : 这个箱子很轻便，轮子顺畅，也抗压，非常棒！</p>
+
+					<p class="hot-comment-who">这条评价来自于 某 用户</p>
+					<p class="hot-comment-name">产品名称 | <span class="hot-comment-price">233元</span></p>			
+				</a>
+			</li>
+			
+			<li>
+				<a href="#">
+					<img src="#">
+					<p class="hot-comment">来自用户的评价:具体部分</p>
+
+					<p class="hot-comment-who">这条评价来自于 某 用户</p>
+					<p class="hot-comment-name">产品名称 | <span class="hot-comment-price">233元</span></p>			
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="#">
+					<p class="hot-comment">来自用户的评价:具体部分</p>
+
+					<p class="hot-comment-who">这条评价来自于 某 用户</p>
+					<p class="hot-comment-name">产品名称 | <span class="hot-comment-price">233元</span></p>			
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="#">
+					<p class="hot-comment">来自用户的评价:具体部分</p>
+
+					<p class="hot-comment-who">这条评价来自于 某 用户</p>
+					<p class="hot-comment-name">产品名称 | <span class="hot-comment-price">233元</span></p>			
+				</a>
+			</li>
+		</ul>	
+	</div>
+
+	<div id="content">
+		<div class="title">
+			<h2>内容</h2>
+		</div>
+		<ul class="content-ul">
+			<li class="rainbow-1 content-ul-li">
+					<span id="content-left" class="content-span">&lt;</span>
+					<span id="content-right" class="content-span">&gt;</span>
+					<p class="content-name">图书</p>
+					<div id="change-content">
+						<ul id="content-ul-more"> 
+							<li class="content-ul-more-li">
+								<a href="#">
+								<p class="content-pro-one">Simon和老金的冒险之旅</p>
+								<p class="content-pro-intro">这本书讲述了一个老金是最厉害的故事，新的篇章精彩来袭！</p>
+								<p class="content-pro-price">价格</p>
+								<p>
+									<img src="#">
+								</p>
+								</a>
+							</li>
+							<li class="content-ul-more-li">
+								<a href="#">
+								<p class="content-pro-one">哈利波特与诅咒的孩子B</p>
+								<p class="content-pro-intro">这本书讲述了一个……的故事OR“哈利波特”第八个故事精彩来袭！</p>
+								<p class="content-pro-price">价格</p>
+								<p>
+								<img src="#">
+							</p>
+							</a>
+							</li>
+							<li class="content-ul-more-li">
+								<a href="#">
+								<p class="content-pro-one">哈利波特与诅咒的孩子C</p>
+								<p class="content-pro-intro">这本书讲述了一个……的故事OR“哈利波特”第八个故事精彩来袭！</p>
+								<p class="content-pro-price">价格</p>
+								<p>
+								<img src="#">
+							</p>
+							</a>
+							</li>
+						</ul>
+					</div>
+					<div id="dot">
+						<ul>
+							<li class="dot-li"><span class="spanOn">&nbsp</span></li>
+							<li class="dot-li"><span >&nbsp</span></li>
+							<li class="dot-li"><span >&nbsp</span></li>
+						</ul>
+					</div>
+
+			</li>
+			<li class="rainbow-2 content-ul-li">
+				<a href=""></a>
+			</li>
+			<li class="rainbow-3 content-ul-li">
+				<a href=""></a>
+			</li>
+			<li class="rainbow-4 content-ul-li">
+				<a href=""></a>
+			</li>
+		</ul>
+	</div>
+
 </div>
 
 <script type="text/javascript">
@@ -591,18 +700,14 @@
 		var buttonA = document.getElementById('A');
 		var buttonB = document.getElementById('B');
 		var buttonC = document.getElementById('C');
-		var buttonD = document.getElementById('D');
-		
+		var buttonD = document.getElementById('D');	
 		var partA = document.getElementById('other-A');
 		var partB = document.getElementById('other-B');
 		var partC = document.getElementById('other-C');
 		var partD = document.getElementById('other-D');
-		
-
 		var partArray = new Array(partA, partB, partC, partD);
 		var buttonArray = new Array(buttonA, buttonB, buttonC, buttonD);
 		function showOrHide(number) {
-			// alert(buttonArray);
 			for (var i = partArray.length - 1; i >= 0; i--) {
 				var cur = partArray[i];
 				var cur_button = buttonArray[i];
@@ -618,21 +723,46 @@
 				}
 			}
 		}
-
-		buttonA.onmouseover = function() {
-			showOrHide(0);
+		for (var i = 0; i < buttonArray.length; i++) {
+			let cur = i;
+			let cur_btn = buttonArray[i];
+			cur_btn.onmouseover = function(){
+				showOrHide(cur);
+			}
 		}
-		buttonB.onmouseover = function() {
-			showOrHide(1);
-		}
-		buttonC.onmouseover = function() {
-			showOrHide(2);
-		}
-		buttonD.onmouseover = function() {
-			showOrHide(3);
-		}
-
 		//家电，智能部分 ：右上角选择不同分类，切换ul
+		var contentL = document.getElementById('content-left');
+		var contentR = document.getElementById('content-right');
+		var contentBox = document.getElementById('content-ul-more');
+		var contentTimer = null;
+		function changeContent(offset) {
+			var oldLeft = contentBox.offsetLeft;
+			clearInterval(contentTimer);
+			contentTimer = setInterval(function(){
+
+				if ((contentBox.offsetLeft <= -600 && offset < 0) ||(contentBox.offsetLeft >= 0 && offset > 0)
+					|| (contentBox.offsetLeft == oldLeft + 300 * offset)) {
+					clearInterval(contentTimer);
+				}else {
+					contentBox.style.left = contentBox.offsetLeft + offset * 30 + 'px';
+				}
+			}, 30);
+		}
+		contentL.onclick = function() {
+			changeContent(1);
+		}
+		contentR.onclick = function() {
+			changeContent(-1);
+		}
+		//内容部分，左右切换
+		var contentSpan = document.getElementsByClassName('dot-li');
+		function contentSpanChange() {
+			var oldLeft = contentBox.offsetLeft;
+			var num = Math.abs(oldLeft / 300);
+			contentSpan.children[num].setAttribute('class','spanOn');
+		}
+		contentSpanChange();
+		//点小圆圈切换小界面
 		
 	};
 </script>
