@@ -616,9 +616,9 @@
 					</div>
 					<div id="dot">
 						<ul>
-							<li class="dot-li"><span class="spanOn">&nbsp</span></li>
-							<li class="dot-li"><span >&nbsp</span></li>
-							<li class="dot-li"><span >&nbsp</span></li>
+							<li class="dot-li"><span index="1" class="spanOn">&nbsp</span></li>
+							<li class="dot-li"><span index="2" class="spanOff">&nbsp</span></li>
+							<li class="dot-li"><span index="3" class="spanOff">&nbsp</span></li>
 						</ul>
 					</div>
 
@@ -734,6 +734,8 @@
 		var contentL = document.getElementById('content-left');
 		var contentR = document.getElementById('content-right');
 		var contentBox = document.getElementById('content-ul-more');
+		var contentSpan =  document.getElementById('dot').getElementsByTagName('span');		
+		var contentSpanIndex = 1;//小圆点序号
 		var contentTimer = null;
 		function changeContent(offset) {
 			var oldLeft = contentBox.offsetLeft;
@@ -748,22 +750,50 @@
 				}
 			}, 30);
 		}
+		function showContentSpanDot(){
+			for (var i = 0; i < contentSpan.length; i++) {
+				if (contentSpan[i].className == 'spanOn') {
+					contentSpan[i].className = 'spanOff';
+					break;
+				}
+			}
+			// alert(contentSpanIndex);
+			contentSpan[contentSpanIndex - 1].className = 'spanOn';
+		}
 		contentL.onclick = function() {
 			changeContent(1);
+			contentSpanIndex -= 1;
+			if (contentSpanIndex <= 0) {
+				contentSpanIndex = 1;
+			}
+			showContentSpanDot();
+
 		}
 		contentR.onclick = function() {
 			changeContent(-1);
+			contentSpanIndex += 1;
+			if (contentSpanIndex >=4) {
+				contentSpanIndex = 3;
+			}
+			showContentSpanDot();
+			
 		}
 		//内容部分，左右切换
-		var contentSpan = document.getElementsByClassName('dot-li');
-		function contentSpanChange() {
-			var oldLeft = contentBox.offsetLeft;
-			var num = Math.abs(oldLeft / 300);
-			contentSpan.children[num].setAttribute('class','spanOn');
+		//小圆点同步显示选中的图片
+
+		for (var i = 0; i < contentSpan.length; i++) {
+			let cur = i;
+			contentSpan[cur].onclick = function(){
+				if (this.className == 'spanOn') {
+					return;
+				}
+				var clickedIndex = parseInt(this.getAttribute('index'));
+				// alert(clickedIndex);
+				contentSpanIndex = clickedIndex;
+				contentBox.style.left = (clickedIndex - 1) * (-300) + 'px';
+				showContentSpanDot();
+			}
 		}
-		contentSpanChange();
-		//点小圆圈切换小界面
-		
 	};
 </script>
 </body>
