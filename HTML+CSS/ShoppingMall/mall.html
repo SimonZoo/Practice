@@ -198,7 +198,7 @@
 	</div>
 	<ul id="super-ul">
 		<li class="rainbow-1">
-			<a href="#" class="nav-link"><img src=""> 
+			<a href="#" class="nav-link"><img src="picture/catPlay.jpg"> 
 			<p>产品A</p>
 			<p>价格</p>
 			<p>产品介绍</p>
@@ -259,7 +259,7 @@
 					<span class="new-message message-1">新品</span>
 					<div class="m-img">
 						<a href="#">
-							<img src="#">
+							<img src="picture/catPlay.jpg">
 							产品A-1
 						</a>
 						<p class="desc">描述</p>
@@ -268,7 +268,7 @@
 					</div>
 					<div class="comment">
 						<a href="#">
-							评价
+							吸猫
 							<p> 来自某用户</p>
 						</a>
 					</div>
@@ -479,7 +479,7 @@
 					<div class="m-img">
 						<a href="#">
 							<img src="#">
-							产品-2
+							产品D-2
 						</a>
 						<p class="desc">描述</p>
 						<p class="m-price">价格</p>
@@ -497,7 +497,7 @@
 					<div class="m-img">
 						<a href="#">
 							<img src="#">
-							产品-3
+							产品D-3
 						</a>
 						<p class="desc">描述</p>
 						<p class="m-price">价格</p>
@@ -533,10 +533,10 @@
 		<ul>
 			<li>
 				<a href="#">
-					<img src="#">
+					<img src="picture/catPlay.jpg">
 					<p class="hot-comment">来自用户的评价 : 这个箱子很轻便，轮子顺畅，也抗压，非常棒！</p>
 
-					<p class="hot-comment-who">这条评价来自于 某 用户</p>
+					<p class="hot-comment-who">这条评价来自于 吸猫 用户</p>
 					<p class="hot-comment-name">产品名称 | <span class="hot-comment-price">233元</span></p>			
 				</a>
 			</li>
@@ -588,7 +588,7 @@
 								<p class="content-pro-intro">这本书讲述了一个老金是最厉害的故事，新的篇章精彩来袭！</p>
 								<p class="content-pro-price">价格</p>
 								<p>
-									<img src="#">
+									<img src="picture/catPlay.jpg">
 								</p>
 								</a>
 							</li>
@@ -634,7 +634,106 @@
 			</li>
 		</ul>
 	</div>
+	
+	<div id="video">
+	<div class="title">
+		<h2>视频</h2>
+	</div>
+		<ul class="video-ul">
+			<li>
+				<a href="#">
+					<img src="picture/catPlay.jpg" alt="">
+					<span class="play">&#9654;</span>
+					这里是一个视频
+				</a>
+				<p class="desc">视频描述</p>
+			</li>
+			<li>
+				<a href="#"></a>
+			</li>
+			<li>
+				<a href="#"></a>
+			</li>
+			<li>
+				<a href="#"></a>
+			</li>
+		</ul>
+	</div>
+</div>
 
+<div id="site-footer"> 
+
+	<div class="footer-service">
+		<ul>
+			<li>
+				<a>预约维修服务</a>
+			</li>
+			<li>
+				<a>7天无理由退货</a>
+			</li>
+			<li>
+				<a>15天免费换货</a>
+			</li>
+			<li>
+				<a>满150包邮</a>
+			</li>
+			<li>
+				<a>520余家售后网点</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="footer-links">
+		<dl class="footer-links-dl">
+			<dt>帮助中心</dt>
+			<dd>账户管理</dd>
+			<dd>购物指南</dd>
+			<dd>订单操作</dd>
+		</dl>
+
+		<dl class="footer-links-dl">
+			<dt>服务支持</dt>
+			<dd>售后政策</dd>
+			<dd>自助服务</dd>
+			<dd>相关下载</dd>
+		</dl>
+
+		<dl class="footer-links-dl">
+			<dt>线下门店</dt>
+			<dd>购物之家</dd>
+			<dd>服务网点</dd>
+			<dd>零售网点</dd>
+		</dl>
+
+		<dl class="footer-links-dl">
+			<dt>关于我们</dt>
+			<dd>了解我们</dd>
+			<dd>加入我们</dd>
+			<dd>联系我们</dd>
+		</dl>
+
+		<dl class="footer-links-dl">
+			<dt>关注我们</dt>
+			<dd>新浪微博</dd>
+			<dd>官方微信</dd>
+			<dd>神秘部落</dd>
+		</dl>
+
+		<dl class="footer-links-dl">
+			<dt>特色通道</dt>
+			<dd>礼物码</dd>
+			<dd>防伪查询</dd>
+			<dd>嗯嗯嗯= =。</dd>
+		</dl>
+	</div>
+
+	<div class="footer-contact">
+		<p class="number">400-400-4001</p>
+		<p class="desc">周一至周日 8:00 - 18:00</p>
+		<p class="desc">(仅收市话费)</p>
+		<a class="online">24小时客服在线</a>
+	</div>
+	
 </div>
 
 <script type="text/javascript">
@@ -737,50 +836,58 @@
 		var contentSpan =  document.getElementById('dot').getElementsByTagName('span');		
 		var contentSpanIndex = 1;//小圆点序号
 		var contentTimer = null;
+		var animated = false;
 		function changeContent(offset) {
+			// if (animated == true) {return;}
+			animated = true;
 			var oldLeft = contentBox.offsetLeft;
 			clearInterval(contentTimer);
 			contentTimer = setInterval(function(){
-
 				if ((contentBox.offsetLeft <= -600 && offset < 0) ||(contentBox.offsetLeft >= 0 && offset > 0)
-					|| (contentBox.offsetLeft == oldLeft + 300 * offset)) {
+					|| (contentBox.offsetLeft == oldLeft + offset)) {
 					clearInterval(contentTimer);
 				}else {
-					contentBox.style.left = contentBox.offsetLeft + offset * 30 + 'px';
+					contentBox.style.left = contentBox.offsetLeft + (offset / 300) * 30 + 'px';
 				}
 			}, 30);
+			animated = false;
 		}
-		function showContentSpanDot(){
-			for (var i = 0; i < contentSpan.length; i++) {
-				if (contentSpan[i].className == 'spanOn') {
-					contentSpan[i].className = 'spanOff';
-					break;
+
+		function showContentSpanDot(flag) {
+			function getOldIndex() {
+				for (var i = 0; i < contentSpan.length; i++) {
+					if (contentSpan[i].className == 'spanOn') {
+						contentSpan[i].className = 'spanOff';
+						if (flag == 1) return i;
+						break;
+					}
 				}
 			}
-			// alert(contentSpanIndex);
+			getOldIndex();
 			contentSpan[contentSpanIndex - 1].className = 'spanOn';
-		}
+			if (flag == 1)return getOldIndex();
+		} 
+		//用闭包拿到了当前选中的小圆点的index，不过应该可以不用这么麻烦……
 		contentL.onclick = function() {
-			changeContent(1);
+			if (animated) {return;}
+			changeContent(300);
 			contentSpanIndex -= 1;
 			if (contentSpanIndex <= 0) {
 				contentSpanIndex = 1;
 			}
-			showContentSpanDot();
-
+			showContentSpanDot(0);
 		}
 		contentR.onclick = function() {
-			changeContent(-1);
+			if (animated) {return;}
+			changeContent(-300);
 			contentSpanIndex += 1;
 			if (contentSpanIndex >=4) {
 				contentSpanIndex = 3;
 			}
-			showContentSpanDot();
-			
+			showContentSpanDot(0);
 		}
 		//内容部分，左右切换
 		//小圆点同步显示选中的图片
-
 		for (var i = 0; i < contentSpan.length; i++) {
 			let cur = i;
 			contentSpan[cur].onclick = function(){
@@ -788,13 +895,23 @@
 					return;
 				}
 				var clickedIndex = parseInt(this.getAttribute('index'));
-				// alert(clickedIndex);
-				contentSpanIndex = clickedIndex;
-				contentBox.style.left = (clickedIndex - 1) * (-300) + 'px';
-				showContentSpanDot();
+				var oldIndex = showContentSpanDot(1) + 1;
+				var times = Math.abs(clickedIndex - oldIndex);
+				var dir = oldIndex > clickedIndex ? 1 : -1; 
+				for (var i = 0; i < times; i++) {
+					changeContent(dir * 300);
+					contentSpanIndex = clickedIndex;
+					showContentSpanDot(0);
+				}
 			}
 		}
-	};
+
+		// var first_li = document.getElementById('site-footer').getElementsByTagName('li')[0];
+		// first_li.style.border = '1px solid red';
+		// var array_dl = document.getElementById('footer-links').getElementsByTagName('dl');
+		// var last_dl = array_dl[array_dl.length - 1];
+		// last_dl.style.borderRight = '1px solid gray';
+
 </script>
 </body>
 </html>
