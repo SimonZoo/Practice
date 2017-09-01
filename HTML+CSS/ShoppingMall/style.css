@@ -182,6 +182,7 @@ a.pro-link {
 	text-align: center;
 	display: block;
 	padding-bottom: 10px;
+	cursor: pointer;
 }
 
 .right-arrow {
@@ -197,6 +198,7 @@ a.pro-link {
 	text-align: center;
 	display: block;
 	padding-top: 0;
+	cursor: pointer;
 }
 
 .right-arrow:hover {
@@ -351,8 +353,6 @@ a.pro-link {
 .more span:hover {
 	color: orange;
 }
-
-
 .rainbow-1 {
 	border-top: 1px solid red;
 }
@@ -370,7 +370,6 @@ a.pro-link {
 }
 
 .container-B {
-	/*border: 1px solid red;*/
 	width: 100%;
 	height: 2150px;
 	position: relative;
@@ -558,7 +557,6 @@ a.pro-link {
 	top: 5px;
 	width: 270px;
 }
-
 .more-app li {
 	position: relative;
 	font-weight: 300;
@@ -727,7 +725,6 @@ a.pro-link {
 	height: 30px;
 	width: 100px;
 }
-
 #dot ul {
 	padding: 0;
 	margin: 0;
@@ -743,7 +740,6 @@ a.pro-link {
     margin: 0 2px;
     cursor: pointer;
 }
-
 .spanOn {
 	background-color: white;
 	border: 2px solid orange;
@@ -770,12 +766,6 @@ a.pro-link {
 	opacity: 1;
 	z-index: 999;
 }
-/*#content ul li:hover {
-	box-shadow: 0 15px 30px rgba(0, 0, 0,0.1);
-	transform: translate3d(0, -2px, 0);
-	-webkit-box-shadow: 0 15px 30px rgba(0, 0, 0,0.1);
-	-webkit-transform: translate3d(0, -2px, 0);
-}*/
 .content-span {
 	display: block;
 	width: 20px;
@@ -807,13 +797,10 @@ a.pro-link {
 	position: relative;
 	margin-left: 80px;
 	height: 380px;
-	/*width: 1300px;*/
-	/*border: 1px solid purple;*/
 }
 .video-ul {
 	position: absolute;
 	top: 50px;
-	/*border: 1px solid green;*/
 	padding: 0;
 	margin: 0;
 }
@@ -822,7 +809,6 @@ a.pro-link {
 	float: left;
 	height: 270px;
 	width: 300px;
-	/*border: 1px solid blue;	*/
 	margin-right: 23px;
 	background-color: white;
 	transition: all .2s linear;
@@ -867,27 +853,21 @@ a.pro-link {
 #site-footer {
 	position: relative;
 	margin-left: 80px;
-	/*border: 1px dashed pink;*/
 	height: 300px;
 	width: 1300px;
 }
 
 .footer-service {
-	/*position: absolute;*/
 	height: 80px;
 	width: 1300px;
-	/*border: 1px dashed green;*/
 }
-
 .footer-service ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	border-bottom: 1px solid gray;
 	height: 80px;
-
 }
-
 .footer-service ul li {
 	margin-top: 35px;
 	float: left;
@@ -900,6 +880,12 @@ a.pro-link {
 
 .footer-service li:first-child {
 	border-left: 0;
+}
+.footer-service ul li a {
+	cursor: pointer;
+}
+.footer-service ul li a:hover {
+	color: orange;
 }
 
 #footer-links {
@@ -915,6 +901,10 @@ a.pro-link {
 	font-size: 14px;
 	color: gray;
 	margin: 10px 0 0;
+	cursor: pointer;
+}
+.footer-links-dl dd:hover {
+	color: orange;
 }
 .footer-contact {
 	float: right;
@@ -945,6 +935,61 @@ a.pro-link {
 	line-height: 28px;
 	color: orange;
 	margin-top: 20px;
-
-
+	cursor: pointer;
+	transition: all .4s;
+}
+.footer-contact a:hover {
+	color: white;
+	background-color: orange;
+}
+.footer-info {
+	position: relative;
+	height: 100px;
+	width: 100%;
+}
+.footer-logo {
+	position:absolute;
+	display: block;
+	width: 80px;
+	margin-left: 80px;
+}
+.footer-logo img {
+	width: 80px;
+}
+.footer-info-links {
+	position: absolute;
+	height: 70px;
+	width: 800px;
+	margin-left: 160px;
+}
+.footer-info-links p {
+	font-size: 12px;
+}
+.footer-info-links ul {
+	height: 20px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.footer-info-links ul li {
+	float: left;
+	font-size: 12px;
+	color: gray;
+	display: inline-block;
+}
+.footer-info-links ul li a {
+	text-decoration: none;
+	font-size: 12px;
+	color: gray;
+	padding: 0 5px;
+}
+.footer-info-links ul li a:hover {
+	color: orange;
+}
+.footer-info-links-first li:first-child {
+	border-left: none;
+}
+.footer-info-links-first li {
+	border-left: 1px solid gray;
+	color: #333;
 }
