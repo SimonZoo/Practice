@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+                
+  
+var name = 'string global ';
+function outFunction() {
+    console.log('in outFunction - this.name : ' + this.name);
+    name = 'Simon'; 
+    function inFunction() {
+        console.log('in isFunction : ' + this.name);
+    }   
+    inFunction();
+}
+outFunction();
+
+
+
+
+function say () {
+    console.log(this.name);
+}
+var objA = {
+    name : 'objA',
+    say : say
+}
+objA.say();
+
+
+var name_2 = 'name_2';
+function say_2 () {
+    console.log(this.name_2);
+}
+var objC = {
+    name_2 : 'objC',
+    say_2 : say_2
+}
+var alias = objC.say_2;
+alias();
+
+</script>
+</body>
+</html>
+ 
