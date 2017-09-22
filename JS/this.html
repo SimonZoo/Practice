@@ -46,6 +46,37 @@ var objC = {
 var alias = objC.say_2;
 alias();
 
+var name_3 = 'global name';
+function speak() {
+    console.log(this.name_3);
+}
+var objD = {
+    name_3 : 'in objD'
+}
+var objE = {
+    name_3 : 'in objE'
+}
+
+speak();
+speak.call(objD);
+speak.apply(objE);
+
+function count(num1,num2) {
+    console.log(this.a + num1 + num2);
+}
+var objF = {
+    a : 3
+}
+var countA = count.bind(objF);
+countA(1,2);
+
+this.test = 999;
+function test1() {
+    console.log(this.test);
+}
+test1();
+
+
 </script>
 </body>
 </html>
