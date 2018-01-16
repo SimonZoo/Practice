@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+        height: 100%;
+    }
+
+    #container {
+        height: 100%;
+    }
+
+    #left, #right{
+        width: 200px;
+        height: 100%;
+        background-color: azure;
+    }
+
+    #left {
+        float: left;
+    }
+
+    #right {
+        float: right;
+    }
+
+    #main {
+        height: 100%;
+        min-width: 600px;
+        margin: 0 200px;
+        background-color: bisque;
+        position: relative;
+    }
+</style>
+<body>
+    <div id="container">
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="main"></div>
+    </div>
+</body>
+</html>

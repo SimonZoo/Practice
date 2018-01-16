@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+</head>
+<style>
+    * {
+        margin: 0;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    #left , #right{
+        width: 200px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+    
+    #left {
+        background-color: aliceblue;
+        left: 0;
+    }
+
+    #right {
+        background-color: aquamarine;
+        right: 0;
+    }
+    #main {
+        height: 100%;
+        margin: 0 200px;
+        background-color: bisque;
+    }
+
+</style>
+<body>
+    <div id="left"></div>
+    <div id="main"></div>
+    <div id="right"></div>
+</body>
+</html>

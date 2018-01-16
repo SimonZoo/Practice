@@ -1,0 +1,59 @@
+<!-- 双飞翼 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+        height: 100%;
+    }
+
+    #container {
+        height: 100%;
+        position: relative;
+        min-width: 600px;
+    }
+
+    #main-warp {
+        height: 100%;
+        width: 100%;
+        float: left;
+        position: relative;
+    }
+    
+    #main {
+        height: 100%;
+        margin: 0 200px;
+        background-color: aquamarine;
+    }
+
+    #left {
+        float: left;
+        width: 200px;
+        height: 100%;
+        margin-left: -100%;
+        background-color: beige;
+    }
+
+    #right {
+        float: left;
+        width: 200px;
+        height: 100%;
+        margin-left: -200px;
+        background-color: beige;
+    }
+</style>
+<body>
+   <div id="container">
+        <div id="main-warp">
+            <div id="main">main</div>
+        </div>
+        <div id="left">left</div>
+        <div id="right">right</div>
+   </div>
+</body>
+</html>
